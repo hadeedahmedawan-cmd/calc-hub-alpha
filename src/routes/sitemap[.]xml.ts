@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { ALL_CALCULATORS } from "@/lib/calculators/registry";
-
-const BASE_URL = "https://calculatehub.lovable.app";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -10,7 +9,7 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const paths = ["/", ...ALL_CALCULATORS.map((c) => `/c/${c.slug}`)];
         const urls = paths.map(
-          (p) => `  <url><loc>${BASE_URL}${p}</loc><changefreq>weekly</changefreq></url>`,
+          (p) => `  <url><loc>${SITE}${p}</loc><changefreq>weekly</changefreq></url>`,
         );
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
