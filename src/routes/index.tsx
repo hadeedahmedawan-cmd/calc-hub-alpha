@@ -162,10 +162,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
-        CalcHub — built with TanStack Start. All calculations run in your browser.
-      </footer>
     </div>
   );
 }
