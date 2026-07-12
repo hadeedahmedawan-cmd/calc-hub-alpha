@@ -121,15 +121,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             {
               "@type": "Organization",
               name: "CalcHub",
-              url: "https://calculatehub.lovable.app",
+              url: SITE,
             },
             {
               "@type": "WebSite",
               name: "CalcHub",
-              url: "https://calculatehub.lovable.app",
+              url: SITE,
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://calculatehub.lovable.app/?q={search_term_string}",
+                target: `${SITE}/?q={search_term_string}`,
                 "query-input": "required name=search_term_string",
               },
             },
