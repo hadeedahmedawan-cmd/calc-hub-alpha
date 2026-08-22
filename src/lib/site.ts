@@ -1,1 +1,1 @@
-export const SITE = "https://calculatehub.lovable.app";
+export const SITE = "https://calc-hub.xyz";
