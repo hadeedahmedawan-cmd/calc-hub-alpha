@@ -1,0 +1,28 @@
+import { createFileRoute } from "@tanstack/react-router";
+import type {} from "@tanstack/react-start";
+import { ALL_CALCULATORS, CATEGORY_SLUGS } from "@/lib/calculators/registry";
+import { SITE } from "@/lib/site";
+
+export const Route = createFileRoute("/sitemap.xml")({
+  server: {
+    handlers: {
+      GET: async () => {
+        const staticPages = ["/", "/about", "/privacy", "/contact", "/guides/mortgage-vs-rent"];
+        const categoryPages = Object.keys(CATEGORY_SLUGS).map((slug) => `/category/${slug}`);
+        const paths = [...staticPages, ...categoryPages, ...ALL_CALCULATORS.map((c) => `/c/${c.slug}`)];
+        const urls = paths.map(
+          (p) => `  <url><loc>${SITE}${p}</loc><changefreq>weekly</changefreq></url>`,
+        );
+        const xml = [
+          `<?xml version="1.0" encoding="UTF-8"?>`,
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+          ...urls,
+          `</urlset>`,
+        ].join("\n");
+        return new Response(xml, {
+          headers: { "Content-Type": "application/xml", "Cache-Control": "public, max-age=3600" },
+        });
+      },
+    },
+  },
+});
