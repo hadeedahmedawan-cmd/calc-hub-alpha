@@ -54,6 +54,7 @@ export const CATEGORIES = [
   "Unit Converters",
   "Everyday & Utility",
   "Math",
+  "Engineering",
   "Cooking & Kitchen",
   "Home, DIY & Construction",
   "Auto & Travel",
