@@ -5,10 +5,16 @@ import { converters } from "./converters";
 import { everyday } from "./everyday";
 import { mathCalcs } from "./math";
 import { misc } from "./misc";
+import { engineering } from "./engineering";
+import { healthAdditions } from "./health-additions";
+import { mathAdditions } from "./math-additions";
+import { everydayAdditions } from "./everyday-additions";
+import { miscAdditions } from "./misc-additions";
 import { CONTENT } from "./content";
 
 const RAW: Calculator[] = [
-  ...financial, ...health, ...converters, ...everyday, ...mathCalcs, ...misc,
+  ...financial, ...health, ...converters, ...everyday, ...mathCalcs, ...misc, ...engineering,
+  ...healthAdditions, ...mathAdditions, ...everydayAdditions, ...miscAdditions,
 ];
 
 export const ALL_CALCULATORS: Calculator[] = RAW.map((c) =>
