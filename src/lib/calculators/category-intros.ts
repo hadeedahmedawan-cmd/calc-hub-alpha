@@ -14,6 +14,8 @@ export const CATEGORY_INTROS: Record<string, string> = {
     "The small, frequent calculations that don't fit neatly into a category of their own: age, percentages, GPA, date math, password generation. Individually minor, but the kind of thing people reach for several times a week.",
   Math:
     "Core arithmetic and algebra tools — fractions, ratios, roots, statistics, logarithms, matrices — built for checking work or handling a calculation that's tedious by hand, not for replacing an understanding of the underlying math.",
+  Engineering:
+    "Electrical, mechanical, and basic construction math — Ohm's Law, voltage drop, wire ampacity, gear ratios, concrete mix ratios. Built around standard, well-documented formulas and reference tables, useful for a quick check or a DIY project, not a substitute for a licensed engineer's sign-off on anything safety-critical.",
   "Cooking & Kitchen":
     "Recipe scaling, oven temperature conversions, ingredient weight lookups, and roast timing — the practical math that shows up mid-recipe, when you're already elbow-deep in the actual cooking.",
   "Home, DIY & Construction":
