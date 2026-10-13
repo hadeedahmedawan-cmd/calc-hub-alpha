@@ -3,6 +3,7 @@ import { calcsByCategory, CATEGORY_SLUGS } from "@/lib/calculators/registry";
 import { CATEGORY_INTROS } from "@/lib/calculators/category-intros";
 import { AdSlot } from "@/components/AdSlot";
 import { SITE } from "@/lib/site";
+import { toneFor } from "@/lib/calculators/category-colors";
 
 export const Route = createFileRoute("/category/$slug")({
   loader: ({ params }) => {
@@ -55,6 +56,7 @@ function CategoryPage() {
           <span className="text-foreground">{category}</span>
         </nav>
 
+        <div className="mb-3 h-1 w-10 rounded-full" style={{ backgroundColor: toneFor(category) }} />
         <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           {category} Calculators
         </h1>
@@ -69,7 +71,7 @@ function CategoryPage() {
               key={c.slug}
               to="/c/$slug"
               params={{ slug: c.slug }}
-              className="block rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground transition-colors hover:border-primary hover:text-primary"
+              className="block rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground shadow-[0_1px_0_0_oklch(0.89_0.016_85/0.6)] transition hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary hover:shadow-md"
             >
               {c.name}
             </Link>
