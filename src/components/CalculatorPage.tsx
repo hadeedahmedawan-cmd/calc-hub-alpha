@@ -4,6 +4,7 @@ import type { Calculator, CalculatorContent as CalculatorContentData, ComputeRes
 import { AdSlot } from "@/components/AdSlot";
 import { ALL_CALCULATORS, slugifyCategory } from "@/lib/calculators/registry";
 import { CATEGORY_DISCLAIMERS } from "@/lib/calculators/disclaimers";
+import { toneFor } from "@/lib/calculators/category-colors";
 
 function renderResult(r: ComputeResult): ReactNode {
   if (r == null) return null;
@@ -65,6 +66,7 @@ export function CalculatorPage({ calc }: { calc: Calculator }) {
         <span className="mx-2">/</span>
         <span className="text-foreground">{calc.name}</span>
       </nav>
+      <div className="mb-3 h-1 w-10 rounded-full" style={{ backgroundColor: toneFor(calc.category) }} />
       <h1 className="text-3xl font-bold tracking-tight text-foreground">{calc.name}</h1>
       <p className="mt-2 text-muted-foreground">{calc.description}</p>
 
