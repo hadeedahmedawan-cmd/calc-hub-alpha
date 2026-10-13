@@ -4,6 +4,7 @@ import { ALL_CALCULATORS, calcsByCategory, ROUNDED_COUNT, slugifyCategory } from
 import { CATEGORIES } from "@/lib/calculators/types";
 import { AdSlot } from "@/components/AdSlot";
 import { SITE } from "@/lib/site";
+import { toneFor } from "@/lib/calculators/category-colors";
 
 const FAQS: { q: string; a: string }[] = [
   {
@@ -123,7 +124,12 @@ function Home() {
             )}
             <section className="mb-10">
               <div className="mb-3 flex items-baseline justify-between">
-                <h2 className="text-xl font-semibold text-foreground">
+                <h2 className="flex items-center gap-2.5 text-xl font-semibold text-foreground">
+                  <span
+                    aria-hidden
+                    className="inline-block h-2.5 w-2.5 rounded-full"
+                    style={{ backgroundColor: toneFor(cat) }}
+                  />
                   <Link to="/category/$slug" params={{ slug: slugifyCategory(cat) }} className="hover:text-primary">
                     {cat}
                   </Link>
@@ -175,7 +181,7 @@ function CalcCard({ calc }: { calc: { slug: string; name: string; description: s
     <Link
       to="/c/$slug"
       params={{ slug: calc.slug }}
-      className="group flex flex-col rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary hover:bg-accent"
+      className="group flex flex-col rounded-lg border border-border bg-card p-4 shadow-[0_1px_0_0_oklch(0.89_0.016_85/0.6)] transition hover:-translate-y-0.5 hover:border-primary/60 hover:bg-accent hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-2">
         <div className="font-medium text-foreground group-hover:text-primary">{calc.name}</div>
