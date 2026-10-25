@@ -80,7 +80,7 @@ export const Route = createFileRoute("/c/$slug")({
   },
   loader: ({ params }) => {
     if (RETIRED_SLUGS[params.slug]) {
-      throw redirect({ to: "/c/$slug", params: { slug: RETIRED_SLUGS[params.slug] } });
+      throw redirect({ to: "/c/$slug", params: { slug: RETIRED_SLUGS[params.slug] }, statusCode: 301 });
     }
     if (!CALC_BY_SLUG[params.slug]) throw notFound();
     return { slug: params.slug };
