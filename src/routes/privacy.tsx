@@ -19,7 +19,7 @@ function PrivacyPage() {
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-2xl px-4 py-12">
         <h1 className="text-3xl font-bold tracking-tight text-foreground">Privacy Policy</h1>
-        <p className="mt-2 text-xs text-muted-foreground">Last updated: July 2026</p>
+        <p className="mt-2 text-xs text-muted-foreground">Last updated: October 2026</p>
 
         <div className="mt-6 space-y-6 text-sm leading-relaxed text-muted-foreground">
           <section>
@@ -54,6 +54,26 @@ function PrivacyPage() {
                 className="text-foreground underline underline-offset-2"
               >
                 policies.google.com/technologies/partner-sites
+              </a>
+              .
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-foreground">Analytics</h2>
+            <p className="mt-2">
+              CalcHub uses Google Analytics to understand how the site is used in aggregate — which
+              pages are visited, roughly where visitors come from, and what kind of device they use.
+              Google Analytics sets cookies for this purpose and reports anonymized, combined
+              statistics rather than anything that identifies you personally. You can opt out
+              with Google's{" "}
+              <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline underline-offset-2"
+              >
+                browser add-on
               </a>
               .
             </p>
