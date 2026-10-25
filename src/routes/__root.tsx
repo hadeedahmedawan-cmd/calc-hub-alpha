@@ -12,6 +12,9 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE } from "../lib/site";
+
+// Google Analytics 4 measurement ID (public by design; visible in page source).
+const GA_MEASUREMENT_ID = "G-9K8RMLW68Y";
 import { ROUNDED_COUNT } from "../lib/calculators/registry";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -115,6 +118,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           ]
         : []),
       {
+        async: true,
+        src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`,
+      },
+      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
@@ -123,6 +136,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@type": "Organization",
               name: "CalcHub",
               url: SITE,
+              logo: `${SITE}/apple-touch-icon.png`,
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                email: "hadeed.writes4u@gmail.com",
+              },
             },
             {
               "@type": "WebSite",
