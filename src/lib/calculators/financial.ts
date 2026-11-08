@@ -158,17 +158,17 @@ export const financial: Calculator[] = [
   },
   {
     slug: "income-tax",
-    name: "Income Tax Calculator (US 2024 est.)",
+    name: "Income Tax Calculator (US 2026 est.)",
     category: cat,
     priority: "High",
-    description: "Approximate federal income tax using single-filer brackets.",
+    description: "Approximate 2026 federal income tax using IRS single-filer brackets.",
     fields: [
       { name: "income", label: "Taxable income", unit: "$", default: 80000 },
     ],
     compute: (v) => {
       const brackets = [
-        [11600, 0.10],[47150, 0.12],[100525, 0.22],[191950, 0.24],
-        [243725, 0.32],[609350, 0.35],[Infinity, 0.37],
+        [12400, 0.10],[50400, 0.12],[105700, 0.22],[201775, 0.24],
+        [256225, 0.32],[640600, 0.35],[Infinity, 0.37],
       ] as const;
       let inc = n(v.income), prev = 0, tax = 0;
       for (const [cap, r] of brackets) {

@@ -61,6 +61,7 @@ export const CONTENT: Record<string, CalculatorContent> = {
       { q: "Does compounding frequency matter?", a: "Slightly. Monthly vs. annually adds only a fraction of a percent, but daily vs. yearly matters over 30+ years." },
       { q: "Is 6% a realistic long-term return?", a: "It's a conservative estimate for a diversified stock portfolio, which has historically averaged closer to 7-10% before inflation over multi-decade periods — 6% leaves some margin of safety." },
     ],
+    relatedGuide: { href: "/guides/how-compound-interest-works", title: "How Compound Interest Actually Works, With Real Numbers" },
   },
   "simple-interest": {
     howItWorks: [
@@ -88,6 +89,7 @@ export const CONTENT: Record<string, CalculatorContent> = {
       { q: "Does pay frequency change my paycheck?", a: "Total annual pay is the same; per-check amount differs. Weekly = 52, biweekly = 26, semi-monthly = 24, monthly = 12." },
       { q: "Why do some months have three biweekly paychecks?", a: "Biweekly pay (every 14 days) produces 26 paychecks a year, which doesn't divide evenly into 12 months — so two months a year get an extra 'third' paycheck. Budget around the 26-paycheck annual total, not a fixed monthly amount." },
     ],
+    relatedGuide: { href: "/guides/reading-your-paycheck", title: "Reading Your Paycheck: Where the Money Goes Before You See It" },
   },
   "take-home-pay": {
     howItWorks: [
@@ -102,20 +104,22 @@ export const CONTENT: Record<string, CalculatorContent> = {
       { q: "Do bonuses affect take-home differently?", a: "US bonuses are often withheld at a flat 22–37% supplemental rate, over-withholding for most people. Difference comes back at tax time." },
       { q: "How often should I recheck this number?", a: "Any time your salary, tax withholding, benefits elections, or retirement contribution rate changes — open enrollment season is a common trigger since premiums often shift." },
     ],
+    relatedGuide: { href: "/guides/reading-your-paycheck", title: "Reading Your Paycheck: Where the Money Goes Before You See It" },
   },
   "income-tax": {
     howItWorks: [
-      "US federal income tax is progressive: each dollar you earn is taxed at the rate for its bracket, not one flat rate on total income. This walks your taxable income through 2024 single-filer brackets.",
+      "US federal income tax is progressive: each dollar you earn is taxed at the rate for its bracket, not one flat rate on total income. This walks your taxable income through the 2026 single-filer brackets published by the IRS.",
       "Result is federal income tax only — Social Security, Medicare, state, and local taxes are all separate.",
       "A common misconception is that moving into a higher bracket taxes your entire income at the new rate — it doesn't. Only the portion of income that falls within that bracket is taxed at the higher rate, which is why effective rates always sit well below the top marginal bracket.",
     ],
-    example: "On $80,000 taxable income (single filer, 2024): federal tax is $12,653.00, effective rate 15.82%, after-tax income $67,347.00.",
+    example: "On $80,000 of taxable income (single filer, 2026): federal tax is $12,312.00, effective rate 15.39%, after-tax income $67,688.00.",
     faqs: [
       { q: "Marginal vs effective rate?", a: "Marginal is your last dollar's bracket (22% or 24% for middle earners). Effective is total tax divided by total income and always lower." },
-      { q: "Does this account for deductions?", a: "No. Enter your taxable income (after standard or itemized deduction) for a realistic result." },
+      { q: "Does this account for deductions?", a: "No. Enter your taxable income, which is your income after the standard or itemized deduction. For 2026 the standard deduction for a single filer is $16,100, so $96,100 of salary with no other adjustments is roughly $80,000 of taxable income." },
       { q: "Why is my real bill different?", a: "State tax, FICA, credits, retirement contributions, HSA, and many other factors change the real number. This is a first-pass estimate." },
       { q: "Does a raise ever leave me with less take-home pay?", a: "In the US federal system, no — because only the income within the new higher bracket is taxed at the higher rate, a raise can never reduce your after-tax income overall." },
     ],
+    relatedGuide: { href: "/guides/reading-your-paycheck", title: "Reading Your Paycheck: Where the Money Goes Before You See It" },
   },
   "sales-tax": {
     howItWorks: [
@@ -170,6 +174,7 @@ export const CONTENT: Record<string, CalculatorContent> = {
       { q: "Does inflation affect these numbers?", a: "Yes. This gives nominal dollars. For purchasing power, subtract expected inflation (~3%/yr) from the return." },
       { q: "What if I start saving later in life?", a: "You'll need a higher monthly contribution or a longer working period to reach the same target — run a few different monthly amounts through this calculator to see what closes the gap." },
     ],
+    relatedGuide: { href: "/guides/how-compound-interest-works", title: "How Compound Interest Actually Works, With Real Numbers" },
   },
   "401k": {
     howItWorks: [
@@ -181,7 +186,7 @@ export const CONTENT: Record<string, CalculatorContent> = {
     faqs: [
       { q: "Should I always take the full employer match?", a: "Yes — it's a 100% immediate return on that portion. Not contributing enough to get the full match is leaving free money." },
       { q: "Traditional vs Roth 401(k)?", a: "Traditional: contributions reduce taxable income now, tax on withdrawal. Roth: after-tax now, tax-free later. Roth wins if you'll be in a higher bracket at retirement." },
-      { q: "What's the 2024 contribution limit?", a: "$23,000 under 50, extra $7,500 catch-up at 50+. Employer match doesn't count toward your limit." },
+      { q: "What's the 2026 contribution limit?", a: "$24,500 of your own contributions if you're under 50. At 50 or older you can add an $8,000 catch-up, and the catch-up is $11,250 if you're 60 to 63 and your plan allows it. Employer match doesn't count toward your personal limit; a separate, higher overall limit covers you and your employer together." },
       { q: "What happens to my 401(k) if I change jobs?", a: "You can typically roll it into your new employer's plan or an IRA without triggering taxes or penalties. Cashing it out early instead usually means a 10% penalty plus income tax on the full amount." },
     ],
   },
@@ -247,10 +252,11 @@ export const CONTENT: Record<string, CalculatorContent> = {
     ],
     example: "To reach $10,000 in 36 months, starting with $1,000 at 4% return: about $232.38 per month.",
     faqs: [
-      { q: "Realistic savings return?", a: "Short-term: 4–5% in high-yield savings or CD (2024–26). Long-term (5+ yrs): 6–8% average in a diversified portfolio." },
+      { q: "Realistic savings return?", a: "Short-term savings accounts and CDs have paid roughly 3–5% in recent years, but those rates follow the broader economy, so check current offers. Over five years or more, a diversified stock portfolio has historically averaged somewhere around 6–8% a year, with large swings along the way." },
       { q: "Multiple goals at once?", a: "Yes — separate 'buckets' keep each on track. Automate transfers on payday." },
       { q: "What if I can't afford the monthly amount this calculator suggests?", a: "Extend the timeline, lower the target, or split the difference — try a few combinations here rather than assuming the goal is out of reach." },
     ],
+    relatedGuide: { href: "/guides/how-compound-interest-works", title: "How Compound Interest Actually Works, With Real Numbers" },
   },
   "investment-return": {
     howItWorks: [
@@ -382,9 +388,10 @@ export const CONTENT: Record<string, CalculatorContent> = {
     faqs: [
       { q: "BMI categories?", a: "<18.5 underweight, 18.5–24.9 normal, 25–29.9 overweight, ≥30 obese (WHO adult cutoffs)." },
       { q: "Is BMI accurate?", a: "For population screening, yes. For individuals — especially athletes, elderly, or Asian populations — it can mislead. Combine with waist for clarity." },
-      { q: "How do I lower my BMI?", a: "Only two levers: lose weight or safely grow taller. Modest calorie deficit + strength training is the standard approach." },
+      { q: "Should I be trying to change my BMI?", a: "BMI is only weight compared to height, so it moves when your weight moves. Whether a change makes sense for you is a question for a doctor, who can look at things BMI can't see, like where you carry weight, your blood work, and your health history." },
       { q: "Does BMI apply the same way to children?", a: "No — children and teens use age- and sex-specific percentile charts instead of the fixed adult cutoffs, since body composition changes significantly during growth." },
     ],
+    relatedGuide: { href: "/guides/bmi-explained", title: "BMI Explained: What the Number Can and Can't Tell You" },
   },
   "calorie": {
     howItWorks: [
@@ -426,6 +433,7 @@ export const CONTENT: Record<string, CalculatorContent> = {
       { q: "Measure over clothes?", a: "Bare skin, tape snug but not compressing. Same time of day (ideally morning) for consistent tracking." },
       { q: "Why did my result change even though my weight didn't?", a: "Body fat percentage and total weight are different measurements — you can gain muscle and lose fat simultaneously, shifting body fat percentage while the scale stays flat." },
     ],
+    relatedGuide: { href: "/guides/bmi-explained", title: "BMI Explained: What the Number Can and Can't Tell You" },
   },
   "ideal-weight": {
     howItWorks: [
@@ -547,6 +555,7 @@ export const CONTENT: Record<string, CalculatorContent> = {
       { q: "WHR vs BMI?", a: "For cardiovascular risk, WHR (and waist alone) predicts outcomes better. Both together give the fullest picture." },
       { q: "Does WHR change with weight loss?", a: "Yes, though abdominal fat often responds noticeably to sustained weight loss and consistent activity, sometimes shifting more visibly than overall body weight in early stages." },
     ],
+    relatedGuide: { href: "/guides/bmi-explained", title: "BMI Explained: What the Number Can and Can't Tell You" },
   },
   "steps-to-calories": {
     howItWorks: [

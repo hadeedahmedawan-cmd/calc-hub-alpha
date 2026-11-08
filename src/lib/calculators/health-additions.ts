@@ -155,6 +155,7 @@ export const healthAdditions: Calculator[] = [
         { q: "Is waist-to-height ratio better than BMI?", a: "It's a useful complement, not a full replacement — waist-to-height ratio focuses on central fat distribution specifically, while BMI reflects overall weight relative to height. Many practitioners use both together." },
         { q: "Does this ratio work the same for children?", a: "The same 0.5 general guideline is commonly referenced for children and adults alike, which is part of why waist-to-height ratio is sometimes preferred over BMI in pediatric contexts — but a pediatrician's assessment is the right authority for a child's specific situation." },
       ],
+      relatedGuide: { href: "/guides/bmi-explained", title: "BMI Explained: What the Number Can and Can't Tell You" },
     },
   },
   {

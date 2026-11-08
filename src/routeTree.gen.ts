@@ -14,7 +14,9 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GuidesIndexRouteImport } from './routes/guides.index'
 import { Route as GuidesMortgageVsRentRouteImport } from './routes/guides.mortgage-vs-rent'
+import { Route as GuidesSlugRouteImport } from './routes/guides.$slug'
 import { Route as CategorySlugRouteImport } from './routes/category.$slug'
 import { Route as CSlugRouteImport } from './routes/c.$slug'
 
@@ -43,9 +45,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesIndexRoute = GuidesIndexRouteImport.update({
+  id: '/guides/',
+  path: '/guides/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GuidesMortgageVsRentRoute = GuidesMortgageVsRentRouteImport.update({
   id: '/guides/mortgage-vs-rent',
   path: '/guides/mortgage-vs-rent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesSlugRoute = GuidesSlugRouteImport.update({
+  id: '/guides/$slug',
+  path: '/guides/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CategorySlugRoute = CategorySlugRouteImport.update({
@@ -67,7 +79,9 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/c/$slug': typeof CSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/guides/mortgage-vs-rent': typeof GuidesMortgageVsRentRoute
+  '/guides/': typeof GuidesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,7 +91,9 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/c/$slug': typeof CSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/guides/mortgage-vs-rent': typeof GuidesMortgageVsRentRoute
+  '/guides': typeof GuidesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,7 +104,9 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/c/$slug': typeof CSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/guides/mortgage-vs-rent': typeof GuidesMortgageVsRentRoute
+  '/guides/': typeof GuidesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,7 +118,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/c/$slug'
     | '/category/$slug'
+    | '/guides/$slug'
     | '/guides/mortgage-vs-rent'
+    | '/guides/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,7 +130,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/c/$slug'
     | '/category/$slug'
+    | '/guides/$slug'
     | '/guides/mortgage-vs-rent'
+    | '/guides'
   id:
     | '__root__'
     | '/'
@@ -120,7 +142,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/c/$slug'
     | '/category/$slug'
+    | '/guides/$slug'
     | '/guides/mortgage-vs-rent'
+    | '/guides/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,7 +155,9 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   CSlugRoute: typeof CSlugRoute
   CategorySlugRoute: typeof CategorySlugRoute
+  GuidesSlugRoute: typeof GuidesSlugRoute
   GuidesMortgageVsRentRoute: typeof GuidesMortgageVsRentRoute
+  GuidesIndexRoute: typeof GuidesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -171,11 +197,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/': {
+      id: '/guides/'
+      path: '/guides'
+      fullPath: '/guides/'
+      preLoaderRoute: typeof GuidesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guides/mortgage-vs-rent': {
       id: '/guides/mortgage-vs-rent'
       path: '/guides/mortgage-vs-rent'
       fullPath: '/guides/mortgage-vs-rent'
       preLoaderRoute: typeof GuidesMortgageVsRentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/$slug': {
+      id: '/guides/$slug'
+      path: '/guides/$slug'
+      fullPath: '/guides/$slug'
+      preLoaderRoute: typeof GuidesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/category/$slug': {
@@ -203,7 +243,9 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   CSlugRoute: CSlugRoute,
   CategorySlugRoute: CategorySlugRoute,
+  GuidesSlugRoute: GuidesSlugRoute,
   GuidesMortgageVsRentRoute: GuidesMortgageVsRentRoute,
+  GuidesIndexRoute: GuidesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

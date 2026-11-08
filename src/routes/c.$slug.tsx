@@ -31,6 +31,8 @@ export const Route = createFileRoute("/c/$slug")({
         { name: "description", content: desc },
         { property: "og:title", content: `${c.name} — CalcHub` },
         { property: "og:description", content: desc },
+        { name: "twitter:title", content: `${c.name} — CalcHub` },
+        { name: "twitter:description", content: desc },
         { property: "og:type", content: "website" },
         { property: "og:url", content: url },
       ],

@@ -2,12 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { ALL_CALCULATORS, CATEGORY_SLUGS } from "@/lib/calculators/registry";
 import { SITE } from "@/lib/site";
+import { GUIDES } from "@/lib/guides";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const staticPages = ["/", "/about", "/privacy", "/contact", "/guides/mortgage-vs-rent"];
+        const staticPages = ["/", "/about", "/privacy", "/contact", "/guides", "/guides/mortgage-vs-rent", ...GUIDES.map((g) => `/guides/${g.slug}`)];
         const categoryPages = Object.keys(CATEGORY_SLUGS).map((slug) => `/category/${slug}`);
         const paths = [...staticPages, ...categoryPages, ...ALL_CALCULATORS.map((c) => `/c/${c.slug}`)];
         const urls = paths.map(

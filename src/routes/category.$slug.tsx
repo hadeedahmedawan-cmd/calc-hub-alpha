@@ -16,10 +16,14 @@ export const Route = createFileRoute("/category/$slug")({
     if (!category) return { meta: [{ title: "Category not found — CalcHub" }] };
     const calcs = calcsByCategory()[category] ?? [];
     const url = `${SITE}/category/${params.slug}`;
+    const desc = `${calcs.length} free ${category.toLowerCase()} calculators. ${CATEGORY_INTROS[category] ?? ""}`.slice(0, 160);
     return {
       meta: [
         { title: `${category} Calculators — CalcHub` },
-        { name: "description", content: `${calcs.length} free ${category.toLowerCase()} calculators. ${CATEGORY_INTROS[category] ?? ""}`.slice(0, 160) },
+        { name: "description", content: desc },
+        { property: "og:description", content: desc },
+        { name: "twitter:title", content: `${category} Calculators — CalcHub` },
+        { name: "twitter:description", content: desc },
         { property: "og:title", content: `${category} Calculators — CalcHub` },
         { property: "og:url", content: url },
       ],

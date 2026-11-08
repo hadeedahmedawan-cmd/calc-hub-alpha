@@ -7,6 +7,9 @@ export const Route = createFileRoute("/about")({
     meta: [
       { title: "About CalcHub" },
       { name: "description", content: "CalcHub is a free collection of calculators and converters for finance, health, math, and everyday life. Built and maintained by Hadeed Ahmed Awan." },
+      { property: "og:description", content: "CalcHub is a free collection of calculators and converters for finance, health, math, and everyday life. Built and maintained by Hadeed Ahmed Awan." },
+      { name: "twitter:title", content: "About CalcHub" },
+      { name: "twitter:description", content: "CalcHub is a free collection of calculators and converters for finance, health, math, and everyday life. Built and maintained by Hadeed Ahmed Awan." },
       { property: "og:title", content: "About CalcHub" },
       { property: "og:url", content: `${SITE}/about` },
     ],

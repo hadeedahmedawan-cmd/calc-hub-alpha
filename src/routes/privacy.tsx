@@ -6,6 +6,9 @@ export const Route = createFileRoute("/privacy")({
     meta: [
       { title: "Privacy Policy — CalcHub" },
       { name: "description", content: "CalcHub's privacy policy: what data is collected, how cookies and advertising work on this site, and how to get in touch." },
+      { property: "og:description", content: "CalcHub's privacy policy: what data is collected, how cookies and advertising work on this site, and how to get in touch." },
+      { name: "twitter:title", content: "Privacy Policy — CalcHub" },
+      { name: "twitter:description", content: "CalcHub's privacy policy: what data is collected, how cookies and advertising work on this site, and how to get in touch." },
       { property: "og:title", content: "Privacy Policy — CalcHub" },
       { property: "og:url", content: `${SITE}/privacy` },
     ],

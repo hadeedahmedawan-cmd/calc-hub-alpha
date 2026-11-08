@@ -6,6 +6,9 @@ export const Route = createFileRoute("/contact")({
     meta: [
       { title: "Contact — CalcHub" },
       { name: "description", content: "Get in touch with CalcHub about a calculation error, a new calculator suggestion, or a general question." },
+      { property: "og:description", content: "Get in touch with CalcHub about a calculation error, a new calculator suggestion, or a general question." },
+      { name: "twitter:title", content: "Contact — CalcHub" },
+      { name: "twitter:description", content: "Get in touch with CalcHub about a calculation error, a new calculator suggestion, or a general question." },
       { property: "og:title", content: "Contact — CalcHub" },
       { property: "og:url", content: `${SITE}/contact` },
     ],

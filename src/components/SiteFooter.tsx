@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-4 text-center text-xs text-muted-foreground sm:flex-row sm:justify-between sm:text-left">
         <div>CalcHub — all calculations run in your browser.</div>
         <nav className="flex items-center gap-4">
-          <Link to="/guides/mortgage-vs-rent" className="hover:text-foreground">
+          <Link to="/guides" className="hover:text-foreground">
             Guides
           </Link>
           <Link to="/about" className="hover:text-foreground">
@@ -20,6 +20,9 @@ export function SiteFooter() {
           </Link>
         </nav>
       </div>
+      <p className="mx-auto mt-4 max-w-6xl px-4 text-center text-[11px] leading-relaxed text-muted-foreground/80 sm:text-left">
+        CalcHub provides general estimates for information only. Results are not financial, tax, medical or legal advice.
+      </p>
     </footer>
   );
 }

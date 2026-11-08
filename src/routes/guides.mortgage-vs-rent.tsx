@@ -6,6 +6,9 @@ export const Route = createFileRoute("/guides/mortgage-vs-rent")({
     meta: [
       { title: "Mortgage vs. Rent: The Real Monthly Math — CalcHub" },
       { name: "description", content: "Buying and renting aren't as different on paper as people assume. A breakdown of what actually changes month to month, and the costs that never show up in either number." },
+      { property: "og:description", content: "Buying and renting aren't as different on paper as people assume. A breakdown of what actually changes month to month, and the costs that never show up in either number." },
+      { name: "twitter:title", content: "Mortgage vs. Rent: The Real Monthly Math" },
+      { name: "twitter:description", content: "Buying and renting aren't as different on paper as people assume. A breakdown of what actually changes month to month, and the costs that never show up in either number." },
       { property: "og:title", content: "Mortgage vs. Rent: The Real Monthly Math" },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE}/guides/mortgage-vs-rent` },
@@ -19,7 +22,7 @@ export const Route = createFileRoute("/guides/mortgage-vs-rent")({
           "@type": "BreadcrumbList",
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: SITE },
-            { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE}/guides/mortgage-vs-rent` },
+            { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE}/guides` },
             { "@type": "ListItem", position: 3, name: "Mortgage vs. Rent", item: `${SITE}/guides/mortgage-vs-rent` },
           ],
         }),
@@ -35,6 +38,8 @@ function GuidePage() {
       <article className="mx-auto max-w-2xl px-4 py-12">
         <nav aria-label="Breadcrumb" className="mb-4 text-xs text-muted-foreground">
           <Link to="/" className="hover:text-foreground">Home</Link>
+          <span className="mx-1.5">/</span>
+          <Link to="/guides" className="hover:text-foreground">Guides</Link>
           <span className="mx-1.5">/</span>
           <span className="text-foreground">Mortgage vs. Rent</span>
         </nav>

@@ -48,6 +48,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: `${ROUNDED_COUNT}+ fast, free calculators: mortgage, BMI, unit converters, tax, GPA, QR codes, and more. No signup, runs in your browser.` },
       { property: "og:title", content: `CalcHub — ${ROUNDED_COUNT}+ free calculators` },
       { property: "og:description", content: "Free calculators for finance, health, converters, math, cooking, home projects and more." },
+      { name: "twitter:title", content: `CalcHub — ${ROUNDED_COUNT}+ free calculators` },
+      { name: "twitter:description", content: "Free calculators for finance, health, converters, math, cooking, home projects and more." },
       { property: "og:url", content: `${SITE}/` },
     ],
     links: [{ rel: "canonical", href: `${SITE}/` }],
